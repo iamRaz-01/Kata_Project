@@ -6,11 +6,14 @@ package week1;
 //terms will be:
 // 1,2,3,5,8,13,21,34,55,89,…
 //By considering the terms in the Fibonacci sequence whose values do not exceed four million, find the sum of the even-valued terms. If you have solved this say solved and ping me the answer.
-
-
 import java.util.ArrayList;
 
 public class Day01 {
+    public static void main(String[]args){
+        System.out.println(FibonacciSeries.sumOfEvenFibonacci(1000));
+
+    }
+
 
 }
  class FibonacciSeries {
@@ -18,7 +21,7 @@ public class Day01 {
 
     public static long fibonacciSeries(int n){
         long value =  Numbers.findKey(memory,n);
-        if(value != Integer.MIN_VALUE) return value;
+        if(value != -1) return value;
         else {
             if(n <= 2 ) return 1 ;
             long fib = fibonacciSeries(n-1) + fibonacciSeries(n-2);
@@ -26,6 +29,20 @@ public class Day01 {
             return fib;
         }
     }
+     public static long sumOfEvenFibonacci(int limit){
+         long sum = 0 ;
+         int n  = 1 ;
+         long value  = fibonacciSeries(n);
+         while(value<limit){
+             if(value%2 ==0){
+                 sum+=value;
+             }
+             value = fibonacciSeries(++n);
+
+         }
+         return sum;
+
+     }
 }
 class Numbers {
     public  Numbers(int key , long value)
@@ -39,6 +56,6 @@ class Numbers {
         for (Numbers numbers : arrayList){
             if(key == numbers.key) return numbers.value;
         }
-        return Integer.MIN_VALUE;
+        return -1;
     }
 }
