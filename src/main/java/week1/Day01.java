@@ -10,11 +10,8 @@ import java.util.ArrayList;
 
 public class Day01 {
     public static void main(String[]args){
-        System.out.println(FibonacciSeries.sumOfEvenFibonacci(1000));
-
+        System.out.println(FibonacciSeries.sumOfEvenFibonacci(4000000));
     }
-
-
 }
  class FibonacciSeries {
     static ArrayList<Numbers> memory = new ArrayList<>();
