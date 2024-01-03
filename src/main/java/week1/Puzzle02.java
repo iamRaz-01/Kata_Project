@@ -2,7 +2,7 @@ package week1;
 //Puzzle02 of FSSAKataProject
 //If we list all the natural numbers below 10 that are multiples of 3 or 5, we get 3,5,6 and 9.The sum of these multiples is 23.
 //Find the sum of all the multiples of 3 or 5 below 1000
-public class Day02 {
+public class Puzzle02 {
     public static void main(String[]args){
         int [] arr  = {3,5};
         System.out.println(NaturalNumbers.sumOfNaturalNumbers(1000,arr));
